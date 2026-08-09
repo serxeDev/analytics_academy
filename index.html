@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics Suite — Interactive Learning Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen font-sans">
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-50 backdrop-blur-md bg-white/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                   
+<div class="bg-gray-900 w-10 h-10  flex items-center justify-center rounded-full">
+    <img src="assets/img/analytics_logo.jpg" alt="Logo" class="w-full h-full object-cover  rounded-full p-1" />
+</div>
+                    <div>
+                        <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Analytics Academy</h1>
+                        <p class="text-xs text-slate-500 hidden sm:block">Interactive playground for the 4 types of analytics</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
+                    <button data-tab-target="descriptive" class="tab-btn tab-active px-4 py-2 rounded-lg text-sm font-medium transition">Descriptive</button>
+                    <button data-tab-target="diagnostic" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition">Diagnostic</button>
+                    <button data-tab-target="predictive" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition">Predictive</button>
+                    <button data-tab-target="prescriptive" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition">Prescriptive</button>
+                </div>
+            </div>
+            <div class="md:hidden flex overflow-x-auto gap-1 bg-slate-100 p-1 rounded-xl mb-3">
+                <button data-tab-target="descriptive" class="tab-btn tab-active whitespace-nowrap flex-1 px-3 py-2 rounded-lg text-xs font-medium transition">Descriptive</button>
+                <button data-tab-target="diagnostic" class="tab-btn whitespace-nowrap flex-1 px-3 py-2 rounded-lg text-xs font-medium transition">Diagnostic</button>
+                <button data-tab-target="predictive" class="tab-btn whitespace-nowrap flex-1 px-3 py-2 rounded-lg text-xs font-medium transition">Predictive</button>
+                <button data-tab-target="prescriptive" class="tab-btn whitespace-nowrap flex-1 px-3 py-2 rounded-lg text-xs font-medium transition">Prescriptive</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+        <!-- ====================================================== -->
+        <!-- ===== DESCRIPTIVE ANALYTICS ===== -->
+        <!-- ====================================================== -->
+        <section id="descriptive" class="tab-panel space-y-6">
+            <!-- HERO -->
+            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 text-white p-6 sm:p-10 shadow-xl">
+                <div class="absolute -right-10 -top-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+                <div class="absolute -left-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
+                <div class="relative">
+                    <span class="inline-flex items-center gap-1 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+                        <span class="w-2 h-2 rounded-full bg-blue-200"></span>
+                        Stage 1 · The Foundation
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-3">What <em>happened</em>?</h2>
+                    <p class="text-blue-100 max-w-2xl text-base sm:text-lg">Descriptive analytics summarizes raw historical data into meaningful insights — totals, averages, counts. It tells you the story of your past.</p>
+                </div>
+            </div>
+
+            <!-- CONCEPT + USE CASES -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-circle-info text-blue-600 text-base"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900">What is Descriptive Analytics?</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">It answers questions about past events using aggregated data — sums, averages, counts, percentages. Think of it as the rear-view mirror of business: clear, factual, and historical. It does <strong>not</strong> predict or advise.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                            <i class="fas fa-briefcase text-emerald-600 text-base"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900">Where is it used?</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-blue-500 mt-1"></i>Monthly sales dashboards</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-blue-500 mt-1"></i>Website traffic reports</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-blue-500 mt-1"></i>HR headcount summaries</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-blue-500 mt-1"></i>Inventory levels & KPIs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- HOW TO USE -->
+            <div class="bg-gradient-to-r from-slate-50 to-blue-50 border border-blue-100 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fas fa-book text-blue-600"></i> How to use this tool
+                </h3>
+                <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+                    <li class="bg-white p-4 rounded-lg border border-slate-200"><span class="block text-blue-600 font-bold mb-1">Step 1</span><span class="text-slate-600">Click any cell in the table below to edit a sale.</span></li>
+                    <li class="bg-white p-4 rounded-lg border border-slate-200"><span class="block text-blue-600 font-bold mb-1">Step 2</span><span class="text-slate-600">Press Enter to confirm. Numbers update automatically.</span></li>
+                    <li class="bg-white p-4 rounded-lg border border-slate-200"><span class="block text-blue-600 font-bold mb-1">Step 3</span><span class="text-slate-600">Click <strong>+ Add Row</strong> to insert new sales data.</span></li>
+                    <li class="bg-white p-4 rounded-lg border border-slate-200"><span class="block text-blue-600 font-bold mb-1">Step 4</span><span class="text-slate-600">Watch the metric cards and chart refresh in real time.</span></li>
+                </ol>
+            </div>
+
+            <!-- DATA WORKSHOP -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="px-6 py-4 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-slate-50">
+                    <div>
+                        <h3 class="font-bold text-slate-900"><i class="fas fa-chart-column text-slate-700 mr-2"></i>Your Data Workshop</h3>
+                        <p class="text-xs text-slate-500">Edit any cell — totals and chart update live.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="descriptive-add-row" class="btn-primary btn-blue"><i class="fas fa-plus"></i> Add Row</button>
+                        <button id="descriptive-reset" class="btn-secondary"><i class="fas fa-rotate-right"></i> Reset</button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-200">
+                        <thead class="bg-slate-50">
+                            <tr>
+                                <th class="th">Date</th>
+                                <th class="th">Product</th>
+                                <th class="th">Quantity Sold</th>
+                                <th class="th">Revenue ($)</th>
+                                <th class="th text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="raw-data-table" class="bg-white divide-y divide-slate-200"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- RESULTS -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-1 grid grid-cols-1 gap-4">
+                    <div class="metric-tile bg-blue-50 border-blue-200">
+                        <span class="metric-label"><i class="fas fa-cubes mr-1 text-blue-500"></i>Total Units Sold</span>
+                        <span id="total-units" class="metric-value text-blue-700">0</span>
+                        <span class="metric-foot">Sum across all rows</span>
+                    </div>
+                    <div class="metric-tile bg-emerald-50 border-emerald-200">
+                        <span class="metric-label"><i class="fas fa-dollar-sign mr-1 text-emerald-500"></i>Total Revenue</span>
+                        <span id="total-revenue" class="metric-value text-emerald-700">$0</span>
+                        <span class="metric-foot">Sum of revenue column</span>
+                    </div>
+                    <div class="metric-tile bg-indigo-50 border-indigo-200">
+                        <span class="metric-label"><i class="fas fa-receipt mr-1 text-indigo-500"></i>Total Transactions</span>
+                        <span id="total-transactions" class="metric-value text-indigo-700">0</span>
+                        <span class="metric-foot">Number of data rows</span>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h4 class="font-bold text-slate-900 mb-4"><i class="fas fa-chart-bar mr-2 text-slate-500"></i>Visual: Revenue by Date</h4>
+                    <div class="h-64"><canvas id="descriptive-chart"></canvas></div>
+                </div>
+            </div>
+
+            <!-- INSIGHT -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500 rounded-xl p-5">
+                <h4 class="font-bold text-slate-900 mb-1"><i class="fas fa-lightbulb text-amber-500 mr-2"></i>Auto-generated Insight</h4>
+                <p id="descriptive-insight" class="text-sm text-slate-700">Add or edit data to see insights.</p>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- ===== DIAGNOSTIC ANALYTICS ===== -->
+        <!-- ====================================================== -->
+        <section id="diagnostic" class="tab-panel hidden space-y-6">
+            <!-- HERO -->
+            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500 via-red-500 to-rose-600 text-white p-6 sm:p-10 shadow-xl">
+                <div class="absolute -right-10 -top-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+                <div class="relative">
+                    <span class="inline-flex items-center gap-1 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+                        <span class="w-2 h-2 rounded-full bg-orange-200"></span>
+                        Stage 2 · The Detective
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-3">Why <em>did</em> it happen?</h2>
+                    <p class="text-orange-100 max-w-2xl text-base sm:text-lg">Diagnostic analytics drills into data to discover root causes — correlations, anomalies, and patterns that explain past results.</p>
+                </div>
+            </div>
+
+            <!-- CONCEPT + USE CASES -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center">
+                            <i class="fas fa-magnifying-glass-chart text-orange-600 text-base"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900">What is Diagnostic Analytics?</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">It goes beyond "what happened" to discover <strong>why</strong> it happened. Using drill-down, data discovery, correlation, and root-cause analysis, you pinpoint the drivers behind your metrics.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                            <i class="fas fa-shield-halved text-emerald-600 text-base"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900">Where is it used?</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-orange-500 mt-1"></i>Fraud detection alerts</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-orange-500 mt-1"></i>Server incident root-cause</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-orange-500 mt-1"></i>Churn analysis</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-orange-500 mt-1"></i>A/B test result interpretation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4 sub-cards in 2x2 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Drill-Down -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-slate-900 flex items-center gap-2">
+                            <i class="fas fa-magnifying-glass text-orange-500"></i> 1. Drill-Down
+                        </h4>
+                        <button class="btn-primary btn-orange text-xs" onclick="runDrillDown()">Run</button>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">Break overall numbers into segments (e.g. regions) to locate weak spots.</p>
+                    <div class="overflow-x-auto rounded-lg border border-slate-200">
+                        <table class="min-w-full text-sm">
+                            <thead class="bg-orange-50"><tr><th class="th">Region</th><th class="th">Performance</th></tr></thead>
+                            <tbody id="drill-table" class="divide-y divide-slate-200"></tbody>
+                        </table>
+                    </div>
+                    <div id="drill-output" class="mt-3"></div>
+                </div>
+
+                <!-- Data Discovery -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-slate-900 flex items-center gap-2">
+                            <i class="fas fa-radar text-orange-500"></i> 2. Data Discovery
+                        </h4>
+                        <button class="btn-primary btn-orange text-xs" onclick="runDataDiscovery()">Scan</button>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">Detect anomalies — spikes or outliers in the logs.</p>
+                    <div class="flex items-center gap-2 mb-3">
+                        <label class="text-xs text-slate-600 font-medium">Threshold:</label>
+                        <input type="number" id="anomaly-threshold" value="100" min="1" class="w-20 px-2 py-1 text-sm border border-slate-300 rounded-md" oninput="runDataDiscovery(); renderDiagnosticChart();">
+                    </div>
+                    <div class="overflow-x-auto rounded-lg border border-slate-200">
+                        <table class="min-w-full text-sm">
+                            <thead class="bg-orange-50"><tr><th class="th">Day</th><th class="th">Errors</th><th class="th">Status</th><th class="th text-right"></th></tr></thead>
+                            <tbody id="discovery-table" class="divide-y divide-slate-200"></tbody>
+                        </table>
+                    </div>
+                    <div class="flex gap-2 mt-2">
+                        <button id="discovery-add-row" class="btn-secondary text-xs"><i class="fas fa-plus"></i> Day</button>
+                        <button id="discovery-reset" class="btn-secondary text-xs"><i class="fas fa-rotate-right"></i> Reset</button>
+                    </div>
+                    <div id="discovery-output" class="mt-3"></div>
+                </div>
+
+                <!-- Correlation -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-slate-900 flex items-center gap-2">
+                            <i class="fas fa-link text-orange-500"></i> 3. Correlation
+                        </h4>
+                        <button class="btn-primary btn-orange text-xs" onclick="runCorrelation()">Analyze</button>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">Measure how strongly two variables move together.</p>
+                    <div class="overflow-x-auto rounded-lg border border-slate-200">
+                        <table class="min-w-full text-sm">
+                            <thead class="bg-orange-50"><tr><th class="th">Delivery Time</th><th class="th">Rating (0-5)</th><th class="th text-right"></th></tr></thead>
+                            <tbody id="correlation-table" class="divide-y divide-slate-200"></tbody>
+                        </table>
+                    </div>
+                    <div class="flex gap-2 mt-2">
+                        <button id="correlation-add-row" class="btn-secondary text-xs"><i class="fas fa-plus"></i> Row</button>
+                        <button id="correlation-reset" class="btn-secondary text-xs"><i class="fas fa-rotate-right"></i> Reset</button>
+                    </div>
+                    <div id="correlation-output" class="mt-3"></div>
+                </div>
+
+                <!-- Root Cause -->
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="font-bold text-slate-900 flex items-center gap-2">
+                            <i class="fas fa-diagram-project text-orange-500"></i> 4. Root Cause
+                        </h4>
+                        <button class="btn-primary btn-orange text-xs" onclick="runRootCause()">Trace</button>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-3">Trace a symptom back to its true origin through causal layers.</p>
+                    <div id="rootcause-output" class="mt-3"></div>
+                </div>
+            </div>
+
+            <!-- VISUAL -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                <h4 class="font-bold text-slate-900 mb-4"><i class="fas fa-chart-line mr-2 text-orange-500"></i>Visual: Error Trend with Anomaly Band</h4>
+                <div class="h-64"><canvas id="diagnostic-chart"></canvas></div>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- ===== PREDICTIVE ANALYTICS ===== -->
+        <!-- ====================================================== -->
+        <section id="predictive" class="tab-panel hidden space-y-6">
+            <!-- HERO -->
+            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-600 via-fuchsia-500 to-pink-600 text-white p-6 sm:p-10 shadow-xl">
+                <div class="absolute -right-10 -top-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+                <div class="relative">
+                    <span class="inline-flex items-center gap-1 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+                        <span class="w-2 h-2 rounded-full bg-purple-200"></span>
+                        Stage 3 · The Forecast
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-3">What <em>will</em> happen?</h2>
+                    <p class="text-purple-100 max-w-2xl text-base sm:text-lg">Predictive analytics uses historical patterns and statistical models to forecast future outcomes with a calculated confidence.</p>
+                </div>
+            </div>
+
+            <!-- CONCEPT + USE CASES -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center">
+                            <i class="fas fa-arrow-trend-up text-purple-600 text-base"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900">What is Predictive Analytics?</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">It applies statistical models, machine learning, and trend extrapolation to estimate future events. Predictions are <em>probabilistic</em> — not certainties — and improve with richer historical data.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-emerald-600 text-base"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900">Where is it used?</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-purple-500 mt-1"></i>Sales & demand forecasting</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-purple-500 mt-1"></i>Credit scoring</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-purple-500 mt-1"></i>Customer churn prediction</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-purple-500 mt-1"></i>Stock market & risk models</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- HOW TO -->
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fas fa-book text-purple-600"></i> How to use this tool
+                </h3>
+                <ol class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                    <li class="bg-white p-4 rounded-lg border border-slate-200"><span class="block text-purple-600 font-bold mb-1">Step 1</span><span class="text-slate-600">Edit the historical year-by-year base data in the table.</span></li>
+                    <li class="bg-white p-4 rounded-lg border border-slate-200"><span class="block text-purple-600 font-bold mb-1">Step 2</span><span class="text-slate-600">Drag the growth-rate slider to model different scenarios.</span></li>
+                    <li class="bg-white p-4 rounded-lg border border-slate-200"><span class="block text-purple-600 font-bold mb-1">Step 3</span><span class="text-slate-600">Read the next-year forecast (units & revenue) and chart.</span></li>
+                </ol>
+            </div>
+
+            <!-- DATA WORKSHOP -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="px-6 py-4 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-slate-50">
+                    <div>
+                        <h3 class="font-bold text-slate-900"><i class="fas fa-calendar-days text-slate-700 mr-2"></i>Historical Base Data</h3>
+                        <p class="text-xs text-slate-500">The latest year is used as the prediction base.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="predictive-add-row" class="btn-primary btn-purple"><i class="fas fa-plus"></i> Add Year</button>
+                        <button id="predictive-reset" class="btn-secondary"><i class="fas fa-rotate-right"></i> Reset</button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-200">
+                        <thead class="bg-slate-50">
+                            <tr><th class="th">Year</th><th class="th">Product</th><th class="th">Units Sold</th><th class="th">Revenue ($)</th><th class="th text-right">Action</th></tr>
+                        </thead>
+                        <tbody id="predictive-base-table" class="bg-white divide-y divide-slate-200"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- CONTROLS + RESULTS -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-1 bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h4 class="font-bold text-slate-900 mb-3"><i class="fas fa-sliders text-slate-700 mr-2"></i>Model Controls</h4>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2">Expected Growth Rate</label>
+                    <input type="range" id="growth-rate" min="0" max="100" value="20" class="w-full mb-2" oninput="runPrediction(); renderPredictiveChart();">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-slate-500">0%</span>
+                        <span id="growth-val" class="px-3 py-1 bg-purple-600 text-white text-sm font-bold rounded-md">20%</span>
+                        <span class="text-xs text-slate-500">100%</span>
+                    </div>
+                    <p class="mt-4 text-xs text-slate-500 italic">Formula: <code>base × (1 + growth)</code></p>
+                </div>
+                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="metric-tile bg-purple-50 border-purple-200">
+                        <span class="metric-label" id="predicted-units-label"><i class="fas fa-cubes mr-1 text-purple-500"></i>Next Year Forecasted Units</span>
+                        <span id="predicted-units" class="metric-value text-purple-700">0</span>
+                        <span class="metric-foot">Based on growth-rate applied to base</span>
+                    </div>
+                    <div class="metric-tile bg-pink-50 border-pink-200">
+                        <span class="metric-label" id="predicted-revenue-label"><i class="fas fa-dollar-sign mr-1 text-pink-500"></i>Next Year Forecasted Revenue</span>
+                        <span id="predicted-revenue" class="metric-value text-pink-700">$0</span>
+                        <span class="metric-foot">Based on growth-rate applied to base</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                <h4 class="font-bold text-slate-900 mb-4"><i class="fas fa-chart-line mr-2 text-purple-500"></i>Visual: Historical Trend + Forecast</h4>
+                <div class="h-64"><canvas id="predictive-chart"></canvas></div>
+            </div>
+        </section>
+
+        <!-- ====================================================== -->
+        <!-- ===== PRESCRIPTIVE ANALYTICS ===== -->
+        <!-- ====================================================== -->
+        <section id="prescriptive" class="tab-panel hidden space-y-6">
+            <!-- HERO -->
+            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 text-white p-6 sm:p-10 shadow-xl">
+                <div class="absolute -right-10 -top-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+                <div class="relative">
+                    <span class="inline-flex items-center gap-1 px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+                        <span class="w-2 h-2 rounded-full bg-emerald-200"></span>
+                        Stage 4 · The Advisor
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-3">What <em>should</em> we do?</h2>
+                    <p class="text-emerald-100 max-w-2xl text-base sm:text-lg">Prescriptive analytics recommends the optimal action by combining predictions, constraints, and business rules into a decision.</p>
+                </div>
+            </div>
+
+            <!-- CONCEPT + USE CASES -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                            <i class="fas fa-circle-check text-emerald-600 text-base"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900">What is Prescriptive Analytics?</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">It is the most advanced form — it not only forecasts outcomes but also suggests <strong>the best decision</strong> given your goals, constraints, and predicted scenarios. It blends optimization, simulation, and business rules.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                            <i class="fas fa-bolt text-emerald-600 text-base"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900">Where is it used?</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-emerald-500 mt-1"></i>Route & logistics optimization</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-emerald-500 mt-1"></i>Pricing & promotion planning</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-emerald-500 mt-1"></i>Supply-chain decisions</li>
+                        <li class="flex gap-2"><i class="fas fa-circle-arrow-right text-emerald-500 mt-1"></i>Resource scheduling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- HOW TO -->
+            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-xl p-6">
+                <h3 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fas fa-book text-emerald-600"></i> How to use this tool
+                </h3>
+                <ol class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                    <li class="bg-white p-4 rounded-lg border border-slate-200"><span class="block text-emerald-600 font-bold mb-1">Step 1</span><span class="text-slate-600">Edit the available route options (distance, toll, time).</span></li>
+                    <li class="bg-white p-4 rounded-lg border border-slate-200"><span class="block text-emerald-600 font-bold mb-1">Step 2</span><span class="text-slate-600">Choose your goal: fastest time or lowest cost.</span></li>
+                    <li class="bg-white p-4 rounded-lg border border-slate-200"><span class="block text-emerald-600 font-bold mb-1">Step 3</span><span class="text-slate-600">Read the recommended action and reasoning.</span></li>
+                </ol>
+            </div>
+
+            <!-- GOAL -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                <h4 class="font-bold text-slate-900 mb-3"><i class="fas fa-bullseye text-emerald-500 mr-2"></i>Define Your Goal</h4>
+                <label class="block text-sm font-semibold text-slate-700 mb-2">What is your primary goal?</label>
+                <div id="user-goal" class="inline-flex bg-slate-100 p-1 rounded-xl gap-1 w-full sm:w-auto">
+                    <button type="button" data-goal="time" class="goal-btn flex-1 sm:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition inline-flex items-center justify-center gap-2">
+                        <i class="fas fa-bolt"></i> Quickest Time
+                    </button>
+                    <button type="button" data-goal="cost" class="goal-btn flex-1 sm:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition inline-flex items-center justify-center gap-2">
+                        <i class="fas fa-dollar-sign"></i> Lowest Cost
+                    </button>
+                </div>
+            </div>
+
+            <!-- DATA WORKSHOP -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="px-6 py-4 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-slate-50">
+                    <div>
+                        <h3 class="font-bold text-slate-900"><i class="fas fa-road text-slate-700 mr-2"></i>Available Options</h3>
+                        <p class="text-xs text-slate-500">Edit route attributes to model new choices.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button id="prescriptive-add-row" class="btn-primary btn-emerald"><i class="fas fa-plus"></i> Add Route</button>
+                        <button id="prescriptive-reset" class="btn-secondary"><i class="fas fa-rotate-right"></i> Reset</button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-200">
+                        <thead class="bg-slate-50">
+                            <tr><th class="th">Route Name</th><th class="th">Distance (km)</th><th class="th">Toll ($)</th><th class="th">Time (min)</th><th class="th text-right">Action</th></tr>
+                        </thead>
+                        <tbody id="prescriptive-table" class="bg-white divide-y divide-slate-200"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- RECOMMENDATION -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-300 rounded-xl p-6">
+                    <span class="inline-flex items-center gap-1 px-3 py-1 bg-emerald-600 text-white text-xs font-bold uppercase rounded-full mb-3"><i class="fas fa-check"></i> Prescribed Action</span>
+                    <div id="prescribed-route" class="text-2xl font-extrabold text-emerald-700 mt-1">Calculating…</div>
+                    <p id="prescribed-reason" class="mt-2 text-slate-700 text-sm"></p>
+                </div>
+                <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+                    <h4 class="font-bold text-slate-900 mb-3"><i class="fas fa-chart-column mr-2 text-slate-500"></i>Option Comparison</h4>
+                    <div class="h-48"><canvas id="prescriptive-chart"></canvas></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-slate-500">
+            Analytics Academy 
+        </div>
+    </footer>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

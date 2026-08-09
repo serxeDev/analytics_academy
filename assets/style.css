@@ -1,0 +1,136 @@
+/* Analytics Learning Lab — Custom Styles */
+*:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; border-radius: 4px; }
+
+/* Make Font Awesome icons properly inherit size & keep alignment */
+i.fas, i.fa-solid { font-style: normal; line-height: 1; display: inline-block; vertical-align: middle; }
+
+/* ---------- METRIC LABEL ICONS ---------- */
+.metric-label i.fas { margin-right: 0.35rem; font-size: 0.85em; }
+
+/* ---------- RESULT BOX ICONS ---------- */
+.result-box i.fas { margin-right: 0.4rem; color: #c2410c; }
+
+/* ---------- BUTTONS ---------- */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.25rem;
+  color: #fff; font-size: 0.875rem; font-weight: 600;
+  padding: 0.5rem 0.875rem; border-radius: 0.5rem;
+  transition: background 0.15s ease, transform 0.1s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+.btn-blue    { background: #2563eb; }
+.btn-blue:hover    { background: #1d4ed8; }
+.btn-orange  { background: #ea580c; }
+.btn-orange:hover  { background: #c2410c; }
+.btn-purple  { background: #9333ea; }
+.btn-purple:hover  { background: #7e22ce; }
+.btn-emerald { background: #059669; }
+.btn-emerald:hover { background: #047857; }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.25rem;
+  background: #e2e8f0; color: #334155; font-size: 0.875rem; font-weight: 600;
+  padding: 0.5rem 0.875rem; border-radius: 0.5rem; transition: background 0.15s ease;
+}
+.btn-secondary:hover { background: #cbd5e1; }
+
+/* ---------- TABLE ---------- */
+.th {
+  padding: 0.75rem 1rem; text-align: left;
+  font-size: 0.75rem; font-weight: 600; color: #475569;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+
+.editable-cell {
+  padding: 0.5rem 0.75rem; border: 1px solid transparent;
+  border-radius: 4px; cursor: text; min-width: 60px;
+  display: inline-block; min-height: 22px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.editable-cell:hover  { background: #f1f5f9; border-color: #cbd5e1; }
+.editable-cell:focus  { background: #fff; border-color: #6366f1; outline: none; box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+
+.delete-row-btn {
+  color: #ef4444; font-weight: 500; padding: 0.25rem 0.5rem;
+  border-radius: 4px; background: transparent; border: none;
+  cursor: pointer; font-size: 0.85rem; transition: all 0.15s ease;
+}
+.delete-row-btn:hover { background: #fee2e2; color: #b91c1c; }
+
+.anomaly-row { background: #fef2f2 !important; font-weight: 600; }
+.anomaly-row .editable-cell { color: #b91c1c; }
+
+/* ---------- METRIC TILES ---------- */
+.metric-tile {
+  border-width: 1px; border-style: solid;
+  border-radius: 0.75rem; padding: 1.25rem;
+  display: flex; flex-direction: column; gap: 0.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+}
+.metric-tile:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.metric-label { font-size: 0.75rem; font-weight: 600; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; }
+.metric-value { display: block; font-size: 2.25rem; font-weight: 800; line-height: 1.1; margin-top: 0.5rem; }
+.metric-foot  { font-size: 0.7rem; color: #64748b; margin-top: 0.25rem; }
+
+/* ---------- RESULT BOX ---------- */
+.result-box {
+  background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412;
+  padding: 0.75rem 1rem; border-radius: 0.5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.875rem; white-space: pre-line; line-height: 1.6;
+}
+
+/* ---------- TABS ---------- */
+.tab-btn {
+  color: #475569;
+}
+.tab-btn:hover { background: #cbd5e1; color: #1e293b; }
+.tab-btn.tab-active {
+  background: #fff; color: #4f46e5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  font-weight: 700;
+}
+
+/* ---------- GOAL BUTTON TOGGLE ---------- */
+.goal-btn {
+  color: #475569;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.goal-btn:hover { background: #cbd5e1; color: #1e293b; }
+.goal-btn.goal-active {
+  background: #fff; color: #047857;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  font-weight: 700;
+}
+.goal-btn i.fas { color: inherit; }
+
+/* ---------- TAB PANEL ---------- */
+.tab-panel { animation: fadeIn 0.3s ease-in-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ---------- RANGE ---------- */
+input[type="range"] { height: 6px; background: #e2e8f0; border-radius: 3px; outline: none; }
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 22px; height: 22px; background: #7c3aed;
+  border-radius: 50%; cursor: pointer; transition: transform 0.15s ease;
+  box-shadow: 0 2px 4px rgba(124,58,237,0.3);
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+input[type="range"]::-moz-range-thumb {
+  width: 22px; height: 22px; background: #7c3aed;
+  border-radius: 50%; cursor: pointer; border: none;
+  box-shadow: 0 2px 4px rgba(124,58,237,0.3);
+}
+input[type="number"] { font-variant-numeric: tabular-nums; }
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
