@@ -32,6 +32,35 @@ body[data-theme="dark"] .result-box {
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.35);
 }
 
+body[data-theme="dark"] .bg-slate-50,
+body[data-theme="dark"] .bg-slate-100,
+body[data-theme="dark"] .bg-white,
+body[data-theme="dark"] .bg-blue-50,
+body[data-theme="dark"] .bg-emerald-50,
+body[data-theme="dark"] .bg-indigo-50,
+body[data-theme="dark"] .bg-purple-50,
+body[data-theme="dark"] .bg-pink-50,
+body[data-theme="dark"] .bg-orange-50,
+body[data-theme="dark"] .bg-red-50,
+body[data-theme="dark"] .bg-rose-50,
+body[data-theme="dark"] .bg-fuchsia-50,
+body[data-theme="dark"] .bg-gray-900,
+body[data-theme="dark"] .bg-gray-100 {
+  background-color: #0f172a !important;
+}
+
+body[data-theme="dark"] .from-slate-50 { --tw-gradient-from: #0f172a !important; }
+body[data-theme="dark"] .to-blue-50 { --tw-gradient-to: #1e3a8a !important; }
+body[data-theme="dark"] .to-indigo-50 { --tw-gradient-to: #312e81 !important; }
+body[data-theme="dark"] .to-purple-50 { --tw-gradient-to: #4c1d95 !important; }
+body[data-theme="dark"] .to-pink-50 { --tw-gradient-to: #831843 !important; }
+body[data-theme="dark"] .from-purple-50 { --tw-gradient-from: #4c1d95 !important; }
+body[data-theme="dark"] .from-pink-50 { --tw-gradient-from: #831843 !important; }
+body[data-theme="dark"] .from-blue-50 { --tw-gradient-from: #1e3a8a !important; }
+body[data-theme="dark"] .from-emerald-50 { --tw-gradient-from: #064e3b !important; }
+body[data-theme="dark"] .from-orange-50 { --tw-gradient-from: #7c2d12 !important; }
+body[data-theme="dark"] .from-red-50 { --tw-gradient-from: #7f1d1d !important; }
+
 body[data-theme="dark"] .text-slate-900,
 body[data-theme="dark"] .text-slate-800,
 body[data-theme="dark"] .text-slate-700,
@@ -72,6 +101,14 @@ body[data-theme="dark"] .editable-cell:focus {
 
 body[data-theme="dark"] .btn-secondary {
   color: #e2e8f0;
+}
+
+body[data-theme="dark"] input,
+body[data-theme="dark"] textarea,
+body[data-theme="dark"] select {
+  background-color: #020617;
+  color: #f8fafc;
+  border-color: #334155;
 }
 
 body[data-theme="dark"] .btn-secondary:hover {
