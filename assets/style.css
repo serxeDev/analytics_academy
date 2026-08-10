@@ -127,14 +127,15 @@ body[data-theme="dark"] .theme-toggle-btn:hover {
 .theme-toggle-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 0.9rem;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
   border-radius: 9999px;
   border: 1px solid #cbd5e1;
   background: #fff;
   color: #334155;
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 1rem;
   transition: all 0.2s ease;
 }
 

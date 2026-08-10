@@ -9,12 +9,8 @@ document.documentElement.style.colorScheme = initialTheme;
 function updateThemeToggle(theme) {
   if (!themeToggle) return;
   const icon = themeToggle.querySelector('.theme-icon');
-  const label = themeToggle.querySelector('.theme-label');
   if (icon) {
     icon.className = theme === 'dark' ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon';
-  }
-  if (label) {
-    label.textContent = theme === 'dark' ? 'Light mode' : 'Night mode';
   }
 }
 
