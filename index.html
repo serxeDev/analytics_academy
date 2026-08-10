@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen font-sans">
+<body class="bg-slate-50 text-slate-800 min-h-screen font-sans transition-colors duration-300">
 
     <!-- ========== NAVBAR ========== -->
     <nav class="bg-white border-b border-slate-200 shadow-sm sticky top-0 z-50 backdrop-blur-md bg-white/80">
@@ -25,11 +25,17 @@
                         <p class="text-xs text-slate-500 hidden sm:block">Interactive playground for the 4 types of analytics</p>
                     </div>
                 </div>
-                <div class="hidden md:flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
-                    <button data-tab-target="descriptive" class="tab-btn tab-active px-4 py-2 rounded-lg text-sm font-medium transition">Descriptive</button>
-                    <button data-tab-target="diagnostic" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition">Diagnostic</button>
-                    <button data-tab-target="predictive" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition">Predictive</button>
-                    <button data-tab-target="prescriptive" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition">Prescriptive</button>
+                <div class="flex items-center gap-2">
+                    <div class="hidden md:flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
+                        <button data-tab-target="descriptive" class="tab-btn tab-active px-4 py-2 rounded-lg text-sm font-medium transition">Descriptive</button>
+                        <button data-tab-target="diagnostic" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition">Diagnostic</button>
+                        <button data-tab-target="predictive" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition">Predictive</button>
+                        <button data-tab-target="prescriptive" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition">Prescriptive</button>
+                    </div>
+                    <button id="theme-toggle" type="button" class="theme-toggle-btn" aria-label="Toggle color theme">
+                        <i class="fas fa-moon theme-icon"></i>
+                        <span class="theme-label">Night mode</span>
+                    </button>
                 </div>
             </div>
             <div class="md:hidden flex overflow-x-auto gap-1 bg-slate-100 p-1 rounded-xl mb-3">

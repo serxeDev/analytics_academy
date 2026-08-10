@@ -1,4 +1,36 @@
 /* Analytics Learning Lab — Combined Logic */
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('analytics-theme');
+const initialTheme = savedTheme === 'dark' ? 'dark' : 'light';
+
+document.body.setAttribute('data-theme', initialTheme);
+document.documentElement.style.colorScheme = initialTheme;
+
+function updateThemeToggle(theme) {
+  if (!themeToggle) return;
+  const icon = themeToggle.querySelector('.theme-icon');
+  const label = themeToggle.querySelector('.theme-label');
+  if (icon) {
+    icon.className = theme === 'dark' ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon';
+  }
+  if (label) {
+    label.textContent = theme === 'dark' ? 'Light mode' : 'Night mode';
+  }
+}
+
+function toggleTheme() {
+  const nextTheme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  document.body.setAttribute('data-theme', nextTheme);
+  document.documentElement.style.colorScheme = nextTheme;
+  localStorage.setItem('analytics-theme', nextTheme);
+  updateThemeToggle(nextTheme);
+}
+
+if (themeToggle) {
+  updateThemeToggle(initialTheme);
+  themeToggle.addEventListener('click', toggleTheme);
+}
+
 const tabButtons = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
 
