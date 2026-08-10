@@ -16,14 +16,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center gap-3">
-                   
-<div class="bg-gray-900 w-10 h-10  flex items-center justify-center rounded-full">
-    <img src="assets/img/analytics_logo.jpg" alt="Logo" class="w-full h-full object-cover  rounded-full p-1" />
-</div>
-                    <div>
-                        <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Analytics Academy</h1>
-                        <p class="text-xs text-slate-500 hidden sm:block">Interactive playground for the 4 types of analytics</p>
-                    </div>
+                    <a href="#" class="flex items-center gap-3" aria-label="Analytics Academy home">
+                        <div class="bg-slate-900 w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 shadow-sm">
+                            <img src="assets/img/analytics_logo.jpg" alt="Analytics Academy logo" class="w-full h-full object-cover rounded-full p-1" />
+                        </div>
+                        <div>
+                            <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Analytics Academy</h1>
+                            <p class="text-xs text-slate-500 hidden sm:block">Interactive playground for the 4 types of analytics</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="flex items-center gap-2">
                     <div class="hidden md:flex items-center gap-1 bg-slate-100 p-1 rounded-xl">
@@ -503,10 +504,10 @@
 
             <!-- RECOMMENDATION -->
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="lg:col-span-2 bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-300 rounded-xl p-6">
+                <div class="lg:col-span-2 prescriptive-card rounded-xl p-6">
                     <span class="inline-flex items-center gap-1 px-3 py-1 bg-emerald-600 text-white text-xs font-bold uppercase rounded-full mb-3"><i class="fas fa-check"></i> Prescribed Action</span>
-                    <div id="prescribed-route" class="text-2xl font-extrabold text-emerald-700 mt-1">Calculating…</div>
-                    <p id="prescribed-reason" class="mt-2 text-slate-700 text-sm"></p>
+                    <div id="prescribed-route" class="prescriptive-title text-2xl font-extrabold mt-1">Calculating…</div>
+                    <p id="prescribed-reason" class="prescriptive-copy mt-2 text-sm"></p>
                 </div>
                 <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
                     <h4 class="font-bold text-slate-900 mb-3"><i class="fas fa-chart-column mr-2 text-slate-500"></i>Option Comparison</h4>
